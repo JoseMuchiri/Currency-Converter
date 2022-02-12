@@ -1,3 +1,4 @@
+// grab elements
 const currencyE1_one = document.getElementById('currency-one');
 const currencyE1_two = document.getElementById('currency-two');
 const amountE1_one = document.getElementById('amount-one');
@@ -9,7 +10,7 @@ const swap = document.getElementById('swap');
 function calculate(){
     const currency_one = currencyE1_one.value;
     const currency_two = currencyE1_two.value;
-
+// rates API
     fetch(`https://v6.exchangerate-api.com/v6/98570a51ba79386b89289b73/latest/${currency_one}`)
     .then((res) => res.json())
     .then((data) => {
@@ -19,7 +20,7 @@ function calculate(){
           amountE1_two.value = (amountE1_one.value * rate).toFixed(2)
           })
 }
-
+// event listeners
 currencyE1_one.addEventListener('change', calculate);
 currencyE1_two.addEventListener('change', calculate);
 amountE1_one.addEventListener('input', calculate)
