@@ -15,6 +15,9 @@
     bottom: initial;
     top: 50%;
 }
+.name{
+    font-size: 4rem;
+}
 #converter{
     display: flex;
     height: 100vh;
